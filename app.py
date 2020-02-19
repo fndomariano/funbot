@@ -1,3 +1,5 @@
 # -*- coding: utf-8 -*-
 
-print('This is a test!')
+from app_tweet import auth
+
+auth()
