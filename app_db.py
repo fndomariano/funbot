@@ -18,8 +18,8 @@ class AppMongo:
 	def save(self, message):
 		try:
 			db = self.get_instance()
-			collection = db['messages']
-			collection.insert_one(message)
+			collection = db['messages']			
+			collection.insert_one({'message': message})
 		except Exception as e:
 			print('An error ocurred: ', str(e))	
 	

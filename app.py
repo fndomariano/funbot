@@ -3,12 +3,11 @@
 from app_listener import AppListener
 
 def main():
-		
 	listener = AppListener()
 
 	print('Searching new messages...')
 
-	while listener.there_is_new_message():
+	while True:
 		listener.register_messages()
 		
 

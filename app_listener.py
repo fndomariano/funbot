@@ -8,22 +8,19 @@ class AppListener:
 
 	def __init__(self):
 		self.db = AppMongo()
-		self.api = api()
-
-	def there_is_new_message(self):
-		site_messages = self.get_messages()
-		db = self.db.get_instance()
-		collection = db['messages']
-		
-		if (len(site_messages) > collection.count()):
-			return True						
-		return False
+		self.api = api()	
 
 	def register_messages(self):
-		print('Registering messages')
-		for message in self.get_messages():
-			self.db.save(message)
-			# self.api.update_status(message)
+		db = self.db.get_instance()				
+		collection = db['messages']
+		
+		for item in self.get_messages():			
+			message = collection.find({'message': item})
+
+			if message.count() == 0:
+				print('Registering a new message')
+				self.db.save(item)
+				self.api.update_status(item)
 		
 	def get_messages(self):
 		url = "http://fndomariano.github.io/fun/messages.json"
