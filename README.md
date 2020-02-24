@@ -24,7 +24,7 @@ docker run -it -v "$(pwd):/app" fndomariano/funbot:1.0 python3 app.py
 
 MIT License
 
-Copyright (c) 2019 Fernando Mariano
+Copyright (c) 2020 Fernando Mariano
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
