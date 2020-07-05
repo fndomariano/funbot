@@ -2,3 +2,4 @@ tweepy
 pymongo 
 python-dotenv
 loguru
+pytest
