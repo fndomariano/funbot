@@ -1,0 +1,4 @@
+tweepy 
+pymongo 
+python-dotenv
+loguru
