@@ -2,6 +2,7 @@
 
 from app_tweet import api
 from app_db import AppMongo
+from loguru import logger
 import requests, json
 
 class AppListener:
@@ -18,7 +19,7 @@ class AppListener:
 			message = collection.find({'message': item})
 
 			if message.count() == 0:
-				print('Registering a new message')
+				logger.info(item)
 				self.db.save(item)
 				self.api.update_status(item)
 		
